@@ -1,77 +1,89 @@
-📌 Title
-
 Breast Cancer Classification with Logistic Regression (from Scratch)
+This project builds a binary classifier in NumPy to predict Malignant (1) vs Benign (0) tumors using the Wisconsin Breast Cancer dataset. It implements the math and training loop of logistic regression without scikit-learn’s model APIs.
 
-📄 Abstract / Overview
+Methodology
+Preprocessing
 
-This project implements a binary classification model using Logistic Regression from scratch in NumPy. The goal is to predict whether a tumor is Malignant (M) or Benign (B) using the Wisconsin Breast Cancer dataset.
+Dropped non-informative columns: id, Unnamed: 32
 
-Unlike off-the-shelf scikit-learn implementations, this project derives and codes the mathematical foundations of logistic regression, including forward propagation, cost calculation, gradient descent, and predictions.
+Encoded labels: M → 1, B → 0
 
-🏗 Methodology
+Applied min–max normalization on features
 
-Preprocessing:
+Model
 
-Removed irrelevant columns (id, Unnamed: 32)
+Logistic regression with sigmoid activation
 
-Encoded target labels (M → 1, B → 0)
+Binary cross-entropy loss
 
-Min-max normalization applied to features
+Gradient descent to learn weights and bias
 
-Model:
+Training
 
-Logistic regression implemented from scratch
+Iterative updates with adjustable learning rate and iterations
 
-Gradient descent optimization for weights and bias
+Cost tracked every 100 steps
 
-Sigmoid activation function
+Train/test split via scikit-learn utilities
 
-Binary cross-entropy cost function
+Results
+Test accuracy: ~95–97% (varies with hyperparameters)
 
-Training:
+Monotonic decrease in cost indicates good convergence
 
-Manual loop with cost tracking every 100 iterations
+Visualizations
+Training cost vs iterations
 
-Adjustable learning rate and number of iterations
+Accuracy comparison: train vs test
 
-📊 Results
+Reproducibility
+Clone repository
 
-Achieved ~95–97% accuracy on test set (depending on hyperparameters)
-
-Convergence observed with decreasing cost function over iterations
-
-🔬 Reproducibility
-git clone https://github.com/yourusername/breast-cancer-logistic-regression-scratch.git
+text
+git clone <your-repo-url>
 cd breast-cancer-logistic-regression-scratch
+Create virtual environment
 
-# Create virtual environment
+macOS/Linux
+
+text
 python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
+source venv/bin/activate
+Windows
 
-# Install dependencies
+text
+python -m venv venv
+venv\Scripts\activate
+Install dependencies
+
+text
 pip install -r requirements.txt
+Run
 
-# Run the model
+text
 python main.py
-
-
-Dependencies (requirements.txt):
-
+Requirements
+text
 numpy
 pandas
 matplotlib
 scikit-learn
+Project Structure
+data/: dataset CSVs or download script
 
-📈 Visualizations
+src/: core implementation (forward pass, loss, gradients, training loop)
 
-Training cost vs iterations plot
+plots/: generated figures
 
-Accuracy comparison on train vs test set
+main.py: entry point
 
-🚀 Future Work
+requirements.txt: dependencies
 
-Extend to multiclass logistic regression (softmax)
+README.md: documentation
 
-Compare against scikit-learn LogisticRegression baseline
+Future Work
+Add L2 regularization to improve generalization
 
-Add regularization (L2) for improved generalization
+Extend to softmax for multiclass
+
+Compare against scikit-learn’s LogisticRegression baseline
