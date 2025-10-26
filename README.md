@@ -79,4 +79,4 @@ scikit-learn
 ## 👤 Author
 
 [Aarush C V]  
-[https://github.com/stormcoder24K or aarushinc1@gmail.com]
+[aarushinc1@gmail.com]
