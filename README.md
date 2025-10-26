@@ -1,44 +1,86 @@
 # 📌 Breast Cancer Classification with Logistic Regression (from Scratch)
 
-This project implements a binary classification model using **Logistic Regression from scratch** in NumPy. The goal is to predict whether a tumor is Malignant (M) or Benign (B) using the Wisconsin Breast Cancer dataset.
+## 📄 Abstract / Overview
 
-Unlike off-the-shelf `scikit-learn` implementations, this project derives and codes the mathematical foundations of logistic regression, including forward propagation, cost calculation, gradient descent, and predictions.
+This project implements a binary classification model using **Logistic Regression from scratch** in NumPy. The goal is to predict whether a tumor is **Malignant (M)** or **Benign (B)** using the Wisconsin Breast Cancer dataset.
+
+Unlike off-the-shelf scikit-learn implementations, this project derives and codes the mathematical foundations of logistic regression, including forward propagation, cost calculation, gradient descent, and predictions.
 
 ---
 
 ## 🏗 Methodology
 
-The model is built from the ground up, focusing on the core mathematical components.
-
 ### Preprocessing
-* Removed irrelevant columns (`id`, `Unnamed: 32`).
-* Encoded target labels (Malignant $\rightarrow$ 1, Benign $\rightarrow$ 0).
-* Applied Min-Max normalization to scale all features between 0 and 1.
+- Removed irrelevant columns (`id`, `Unnamed: 32`)
+- Encoded target labels (M → 1, B → 0)
+- Min-max normalization applied to features
 
 ### Model
-* **Logistic Regression:** Implemented from scratch using only NumPy.
-* **Activation:** Sigmoid function ($\sigma(z) = \frac{1}{1 + e^{-z}}$).
-* **Cost Function:** Binary Cross-Entropy (Log Loss).
-* **Optimization:** Gradient Descent to update weights ($w$) and bias ($b$).
+- Logistic regression implemented from scratch
+- Gradient descent optimization for weights and bias
+- Sigmoid activation function
+- Binary cross-entropy cost function
 
 ### Training
-* A manual training loop is used, with an adjustable learning rate and number of iterations.
-* Cost is tracked and printed every 100 iterations to monitor convergence.
+- Manual loop with cost tracking every 100 iterations
+- Adjustable learning rate and number of iterations
 
 ---
 
 ## 📊 Results
 
-* Achieved **~95–97% accuracy** on the test set, depending on hyperparameter tuning.
-* Observed successful convergence with the cost function decreasing steadily over iterations.
+- Achieved **~95–97% accuracy** on test set (depending on hyperparameters)
+- Convergence observed with decreasing cost function over iterations
 
 ---
 
-## 🔬 Getting Started
-
-Follow these steps to download and run the project locally.
-
-### 1. Clone the Repository
+## 🔬 Reproducibility
 ```bash
-git clone [https://github.com/yourusername/breast-cancer-logistic-regression-scratch.git](https://github.com/yourusername/breast-cancer-logistic-regression-scratch.git)
+# Clone the repository
+git clone https://github.com/yourusername/breast-cancer-logistic-regression-scratch.git
 cd breast-cancer-logistic-regression-scratch
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # or venv\Scripts\activate on Windows
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the model
+python main.py
+```
+
+### Dependencies (`requirements.txt`)
+```text
+numpy
+pandas
+matplotlib
+scikit-learn
+```
+
+---
+
+## 📈 Visualizations
+
+- Training cost vs iterations plot
+- Accuracy comparison on train vs test set
+
+---
+
+## 🚀 Future Work
+
+- Extend to multiclass logistic regression (softmax)
+- Compare against scikit-learn `LogisticRegression` baseline
+- Add regularization (L2) for improved generalization
+
+---
+
+## 📜 License
+
+[Add your license here, e.g., MIT License]
+
+## 👤 Author
+
+[Your Name]  
+[Your GitHub Profile / Contact]
