@@ -76,11 +76,7 @@ scikit-learn
 
 ---
 
-## 📜 License
-
-[Add your license here, e.g., MIT License]
-
 ## 👤 Author
 
-[Your Name]  
-[Your GitHub Profile / Contact]
+[Aarush C V]  
+[https://github.com/stormcoder24K or aarushinc1@gmail.com]
